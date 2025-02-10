@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ambev.Application\Ambev.Application.csproj" />
+    <ProjectReference Include="..\Ambev.Domain\Ambev.Domain.csproj">
+      <TreatAsUsed>true</TreatAsUsed>
+    </ProjectReference>
+    <ProjectReference Include="..\Ambev.Infraestructure\Ambev.Infraestructure.csproj">
+      <TreatAsUsed>true</TreatAsUsed>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>

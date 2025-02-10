@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: maypassworD*1234
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+  mongodb:
+    image: mongo:7
+    container_name: ambevapi
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app_network
+
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo_express
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: secret
+      ME_CONFIG_MONGODB_SERVER: mongo_db
+    ports:
+      - "8081:8081"
+    networks:
+      - app_network
+    depends_on:
+      - mongodb
+
+networks:
+  app_network:
+
+volumes:
+  postgres_data:
+  mongo_data:

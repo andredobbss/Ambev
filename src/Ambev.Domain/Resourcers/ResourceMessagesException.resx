@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BOOLEAN" xml:space="preserve">
+    <value>Field must be true or false</value>
+  </data>
+  <data name="DISCOUNT" xml:space="preserve">
+    <value>Discount must be between 0 and 1</value>
+  </data>
+  <data name="EMPTY_FIELD" xml:space="preserve">
+    <value>Field cannot be empty</value>
+  </data>
+  <data name="EMPTY_PASSWORD" xml:space="preserve">
+    <value>The 'Password' field is required</value>
+  </data>
+  <data name="ERROR_AUTHENTICATION" xml:space="preserve">
+    <value>Invalid token</value>
+  </data>
+  <data name="ERROR_DETAIL_AUTHENTICATION" xml:space="preserve">
+    <value>The token has expired or is invalid</value>
+  </data>
+  <data name="ERROR_DETAIL_DOMAIN" xml:space="preserve">
+    <value>The following fields have errors</value>
+  </data>
+  <data name="ERROR_DETAIL_ID" xml:space="preserve">
+    <value>The ID provided in the URL does not match the ID in the request body. ID provided:</value>
+  </data>
+  <data name="ERROR_DETAIL_INTERNAL_SERVER" xml:space="preserve">
+    <value>An unexpected error occurred</value>
+  </data>
+  <data name="ERROR_DOMAIN" xml:space="preserve">
+    <value>Domain validation error</value>
+  </data>
+  <data name="ERROR_ID" xml:space="preserve">
+    <value>Invalid ID</value>
+  </data>
+  <data name="ERROR_ID_NEW_EXCEPTION" xml:space="preserve">
+    <value>Record with the given ID not found. Provided ID:</value>
+  </data>
+  <data name="ERROR_INTERNAL_SERVER" xml:space="preserve">
+    <value>Internal Server Error</value>
+  </data>
+  <data name="ERROR_LOGIN" xml:space="preserve">
+    <value>Enter username and password</value>
+  </data>
+  <data name="ERROR_RESOURCE_NOT_FOUND" xml:space="preserve">
+    <value>Resource not found</value>
+  </data>
+  <data name="ERROR_TYPE_AUTHENTICATION" xml:space="preserve">
+    <value>AuthenticationError</value>
+  </data>
+  <data name="ERROR_TYPE_BAD_REQUEST" xml:space="preserve">
+    <value>Bad Request</value>
+  </data>
+  <data name="ERROR_TYPE_DOMAIN" xml:space="preserve">
+    <value>DomainValidationError</value>
+  </data>
+  <data name="ERROR_TYPE_INTERNAL_SERVER" xml:space="preserve">
+    <value>InternalServerError</value>
+  </data>
+  <data name="ERROR_TYPE_RESOURCE_NOT_FOUND" xml:space="preserve">
+    <value>ResourceNotFound</value>
+  </data>
+  <data name="INVALID_DATE" xml:space="preserve">
+    <value>Enter a valid date</value>
+  </data>
+  <data name="INVALID_DISCOUNT_RULE" xml:space="preserve">
+    <value>The applied discount rule is invalid for the quantity of items in the cart</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Please provide a valid email address</value>
+  </data>
+  <data name="INVALID_FILTER" xml:space="preserve">
+    <value>Invalid filter type or incompatible filter value</value>
+  </data>
+  <data name="INVALID_IDENTIFIED" xml:space="preserve">
+    <value>Enter a valid identfier</value>
+  </data>
+  <data name="INVALID_LOGIN" xml:space="preserve">
+    <value>Authentication not validated</value>
+  </data>
+  <data name="INVALID_NUMBER" xml:space="preserve">
+    <value>Please provide a valid number</value>
+  </data>
+  <data name="LENGTH_ 100" xml:space="preserve">
+    <value>Maximum number of characters is 100</value>
+  </data>
+  <data name="LENGTH_ 15" xml:space="preserve">
+    <value>Maximum number of characters is 15</value>
+  </data>
+  <data name="LENGTH_ 20" xml:space="preserve">
+    <value>Maximum number of characters is 20</value>
+  </data>
+  <data name="LENGTH_ 255" xml:space="preserve">
+    <value>Maximum number of characters is 255</value>
+  </data>
+  <data name="LENGTH_ 50" xml:space="preserve">
+    <value>Maximum number of characters is 50</value>
+  </data>
+  <data name="LENGTH_ 500" xml:space="preserve">
+    <value>Maximum number of characters is 500</value>
+  </data>
+  <data name="NULL_FIELD" xml:space="preserve">
+    <value>Field cannot be null</value>
+  </data>
+  <data name="NUMBER_GREATER_THAN_ZERO" xml:space="preserve">
+    <value>Number must be greater than zero</value>
+  </data>
+  <data name="PASSWORD_LOWERCASE_CHARACTERS" xml:space="preserve">
+    <value>Password must contain at least one lowercase letter</value>
+  </data>
+  <data name="PASSWORD_MAX_LENGTH" xml:space="preserve">
+    <value>Password must be at most 20 characters long</value>
+  </data>
+  <data name="PASSWORD_MIN_LENGTH" xml:space="preserve">
+    <value>Password must be at least 8 characters long</value>
+  </data>
+  <data name="PASSWORD_NUMBER" xml:space="preserve">
+    <value>Password must contain at least one number</value>
+  </data>
+  <data name="PASSWORD_SPECIAL_CHARACTER" xml:space="preserve">
+    <value>Password must contain at least one special character (!, @, #, etc.)</value>
+  </data>
+  <data name="PASSWORD_UPPERCASE_CHARACTERS" xml:space="preserve">
+    <value>The password should contain at least 1 uppercase character.</value>
+  </data>
+  <data name="QUANTITY_BETWEEN_10 AND_20" xml:space="preserve">
+    <value>Purchases of 10 to 20 identical items receive a 20% discount.</value>
+  </data>
+  <data name="QUANTITY_GREATER_THAN_20" xml:space="preserve">
+    <value>You cannot sell more than 20 identical items.</value>
+  </data>
+  <data name="QUANTITY_GREATER_THAN_4" xml:space="preserve">
+    <value>Purchases of 4 or more identical items have a 10% discount</value>
+  </data>
+  <data name="QUANTITY_GREATER_THAN_ZERO" xml:space="preserve">
+    <value>Quantity must be greater than zero</value>
+  </data>
+  <data name="QUANTITY_LESS_THAN_4" xml:space="preserve">
+    <value>Purchases of less than 4 items do not have a discount.</value>
+  </data>
+  <data name="TYPE_AUTHENTICATION_ERROR" xml:space="preserve">
+    <value>AuthenticationError</value>
+  </data>
+  <data name="TYPE_NOT_FOND" xml:space="preserve">
+    <value>ResourceNotFound</value>
+  </data>
+  <data name="TYPE_VALIDATION_ERROR" xml:space="preserve">
+    <value>ValidationError</value>
+  </data>
+</root>
