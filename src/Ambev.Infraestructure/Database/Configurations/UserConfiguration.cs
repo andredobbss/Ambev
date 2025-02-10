@@ -29,7 +29,7 @@ public class UserConfiguration : IEntityTypeConfiguration<UserDomain>
             a.Property(ad => ad.Street).HasMaxLength(255).HasColumnName("Street");
             a.Property(ad => ad.Number).HasColumnName("Number");
             a.Property(ad => ad.ZipCode).HasMaxLength(20).HasColumnName("ZipCode");
-
+            a.Property(ad => ad.Phone).HasMaxLength(20).HasColumnName("Phone");
             a.OwnsOne(ad => ad.Geolocation, g =>
             {
                 g.Property(gl => gl.Lat).HasMaxLength(50).HasColumnName("Lat");

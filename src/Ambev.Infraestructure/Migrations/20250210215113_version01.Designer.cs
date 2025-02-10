@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ambev.Infraestructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250210195801_version01")]
+    [Migration("20250210215113_version01")]
     partial class version01
     {
         /// <inheritdoc />
@@ -289,7 +289,9 @@ namespace Ambev.Infraestructure.Migrations
 
                             b1.Property<string>("Phone")
                                 .IsRequired()
-                                .HasColumnType("text");
+                                .HasMaxLength(20)
+                                .HasColumnType("character varying(20)")
+                                .HasColumnName("Phone");
 
                             b1.Property<string>("Street")
                                 .IsRequired()

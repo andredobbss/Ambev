@@ -286,7 +286,9 @@ namespace Ambev.Infraestructure.Migrations
 
                             b1.Property<string>("Phone")
                                 .IsRequired()
-                                .HasColumnType("text");
+                                .HasMaxLength(20)
+                                .HasColumnType("character varying(20)")
+                                .HasColumnName("Phone");
 
                             b1.Property<string>("Street")
                                 .IsRequired()

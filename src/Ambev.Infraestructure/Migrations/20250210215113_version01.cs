@@ -62,7 +62,7 @@ namespace Ambev.Infraestructure.Migrations
                     Street = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     Number = table.Column<int>(type: "integer", nullable: false),
                     ZipCode = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
-                    Address_Phone = table.Column<string>(type: "text", nullable: false),
+                    Phone = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
                     Lat = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Long = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Status = table.Column<int>(type: "integer", maxLength: 20, nullable: false),
