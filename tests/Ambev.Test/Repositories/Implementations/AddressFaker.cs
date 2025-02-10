@@ -14,7 +14,7 @@ public class AddressFaker : IAddressFaker
                 f.Address.StreetName(),
                 f.Random.Int(1, 9999),
                 f.Address.ZipCode(),
-                f.Phone.PhoneNumber(),
+                f.Phone.PhoneNumber("(##) #####-####"),
                 geolocation: new GeolocationDomain(
                     f.Address.Latitude().ToString(),
                     f.Address.Longitude().ToString()
