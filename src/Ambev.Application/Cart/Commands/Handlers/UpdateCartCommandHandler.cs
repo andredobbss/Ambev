@@ -1,4 +1,5 @@
-﻿using Ambev.Application.Interfaces;
+﻿using Ambev.Application.Cart.Notifications;
+using Ambev.Application.Interfaces;
 using Ambev.Domain.Entities;
 using Ambev.Domain.Validations;
 using Ambev.Domain.ValueObjects;
@@ -9,10 +10,12 @@ namespace Ambev.Application.Cart.Commands.Handlers;
 public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, CartDomain>
 {
     private readonly ICartService _cartService;
+    private readonly IMediator _mediator;
 
-    public UpdateCartCommandHandler(ICartService artService)
+    public UpdateCartCommandHandler(ICartService artService, IMediator mediator)
     {
         _cartService = artService;
+        _mediator = mediator;
     }
 
     public async Task<CartDomain> Handle(UpdateCartCommand request, CancellationToken cancellationToken)
@@ -34,9 +37,11 @@ public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, CartD
                 products
             );
 
-            var createCart = await _cartService.UpdateCartAsync(cartDomain);
+            var updatedCart = await _cartService.UpdateCartAsync(cartDomain);
 
-            return createCart;
+            await _mediator.Publish(new CartEvent(updatedCart), cancellationToken);
+
+            return updatedCart;
         }
         catch (DomainValidationException)
         {

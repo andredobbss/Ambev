@@ -1,4 +1,5 @@
 ﻿using Ambev.Application.Interfaces;
+using Ambev.Application.User.Notifcations;
 using Ambev.Domain.Entities;
 using Ambev.Domain.Validations;
 using MediatR;

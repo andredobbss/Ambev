@@ -1,4 +1,5 @@
 ﻿using Ambev.Application.Interfaces;
+using Ambev.Application.User.Notifcations;
 using Ambev.Domain.Entities;
 using Ambev.Domain.Enums;
 using Ambev.Domain.Validations;
@@ -10,9 +11,11 @@ namespace Ambev.Application.User.Commands.Handlers;
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDomain>
 {
     private readonly IUserService _userService;
-    public CreateUserCommandHandler(IUserService userService)
+    private readonly IMediator _mediator;
+    public CreateUserCommandHandler(IUserService userService, IMediator mediator)
     {
         _userService = userService;
+        _mediator = mediator;
     }
 
     public async Task<UserDomain> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -33,6 +36,8 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserD
                 new ExternalIdentityDomain(request.ExternalIdentity.Provider, request.ExternalIdentity.ExternalId));
 
             var createdUser = await _userService.RegisterUserAsync(userDomain);
+
+            await _mediator.Publish(new UserEvent(createdUser), cancellationToken);
 
             return createdUser;
         }

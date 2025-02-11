@@ -1,4 +1,5 @@
-﻿using Ambev.Application.Interfaces;
+﻿using Ambev.Application.Cart.Notifications;
+using Ambev.Application.Interfaces;
 using Ambev.Domain.Entities;
 using Ambev.Domain.Validations;
 using Ambev.Domain.ValueObjects;
@@ -9,10 +10,12 @@ namespace Ambev.Application.Cart.Commands.Handlers;
 public class CreateCartCommandHandler : IRequestHandler<CreateCartCommand, CartDomain>
 {
     private readonly ICartService _cartService;
+    private readonly IMediator _mediator;
 
-    public CreateCartCommandHandler(ICartService artService)
+    public CreateCartCommandHandler(ICartService artService, IMediator mediator)
     {
         _cartService = artService;
+        _mediator = mediator;
     }
 
     public async Task<CartDomain> Handle(CreateCartCommand request, CancellationToken cancellationToken)
@@ -35,6 +38,8 @@ public class CreateCartCommandHandler : IRequestHandler<CreateCartCommand, CartD
             );
 
             var createCart = await _cartService.AddCartAsync(cartDomain);
+
+            await _mediator.Publish(new CartEvent(createCart), cancellationToken);
 
             return createCart;
         }
