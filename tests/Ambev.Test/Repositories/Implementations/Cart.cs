@@ -13,19 +13,12 @@ public class Cart : ICart
         var faker = new Faker<CartDomain>()
         .CustomInstantiator(f =>
         {
-            var validProducts = products?.Where(p => p != null && p.Quantity > 0 && !string.IsNullOrWhiteSpace(p.Subsidiary)).ToList();
-
-            if (validProducts == null || !validProducts.Any())
-            {
-                throw new Exception("Erro: Nenhum produto válido foi gerado para o carrinho.");
-            }
-
             return new CartDomain(
                 f.Random.Int(),
                 userId > 0 ? userId : f.Random.Int(1, 1000), 
                 date <= DateTime.Now ? date : f.Date.Past(), 
                 cancel,
-                validProducts
+                products
             );
         });
 

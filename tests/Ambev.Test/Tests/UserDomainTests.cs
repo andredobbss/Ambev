@@ -2,14 +2,10 @@
 using Ambev.Domain.Enums;
 using Ambev.Domain.Resourcers;
 using Ambev.Domain.Validations;
-using Ambev.Domain.ValueObjects;
 using Ambev.Test.Repositories.Implementations;
 using Ambev.Test.Repositories.Interfaces;
 using Bogus;
-using Bogus.DataSets;
 using FluentAssertions;
-using System.Xml.Serialization;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ambev.Test.Tests;
 
@@ -30,7 +26,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -45,7 +40,6 @@ public class UserDomainTests
         Assert.NotNull(userDomain);
         Assert.Equal(id, userDomain.First().Id);
         Assert.Equal(email, userDomain.First().Email);
-        //Assert.Equal(password, userDomain.First().Password);
         Assert.Equal(status, userDomain.First().Status);
         Assert.Equal(role, userDomain.First().Role);
 
@@ -62,7 +56,6 @@ public class UserDomainTests
         Assert.Equal(address.Phone, userDomain.First().Address.Phone);
         Assert.Equal(address.ZipCode, userDomain.First().Address.ZipCode);
 
-        // Verificando ExternalIdentity
         Assert.NotNull(userDomain.First().ExternalIdentity);
         Assert.Equal(externalIdentity.Provider, userDomain.First().ExternalIdentity.Provider);
         Assert.Equal(externalIdentity.ExternalId, userDomain.First().ExternalIdentity.ExternalId);
@@ -80,7 +73,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -93,7 +85,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -111,7 +103,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -124,7 +115,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.INVALID_EMAIL);
@@ -142,7 +133,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -155,7 +145,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -173,7 +163,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -186,7 +175,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_MIN_LENGTH);
@@ -204,7 +193,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -217,7 +205,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_MAX_LENGTH);
@@ -235,7 +223,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -248,7 +235,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_UPPERCASE_CHARACTERS);
@@ -266,7 +253,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -279,7 +265,7 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_LOWERCASE_CHARACTERS);
@@ -297,7 +283,6 @@ public class UserDomainTests
         var id = _faker.Random.Int(1, 1000);
         var email = _faker.Person.Email;
         var userNane = _faker.Person.FirstName;
-        //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
         var status = _faker.PickRandom<EUserStatusDomain>();
         var role = _faker.PickRandom<EUserRoleDomain>();
         var name = nameFake.NameFake();
@@ -310,40 +295,9 @@ public class UserDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_NUMBER);
     }
-
-    //[Fact]
-    //public void ThereShouldBeAnErrorWhenThePasswordDoesNotContainAtLeastOneSpecialCharacter()
-    //{
-    //    //Arrange
-    //    IUser user = new User();
-    //    INameFaker nameFake = new NameFaker();
-    //    IAddressFaker addressFake = new AddressFaker();
-    //    IExternalIdentity externalIdentityFake = new ExternalIdentity();
-
-    //    var id = _faker.Random.Int(1, 1000);
-    //    var email = _faker.Person.Email;
-    //    var userNane = _faker.Person.FirstName;
-    //    //var password = _faker.Internet.Password(8, false, "[A-Za-z0-9!@#$%^&*()]");
-    //    var status = _faker.PickRandom<EUserStatusDomain>();
-    //    var role = _faker.PickRandom<EUserRoleDomain>();
-    //    var name = nameFake.NameFake();
-    //    var address = addressFake.AddressFake();
-    //    var externalIdentity = externalIdentityFake.ExternalIdentityFake();
-
-
-    //    // Act
-    //    Action act = () => new UserDomain(id, email, userNane, "Test.test123.com", name, address, status, role, externalIdentity);
-
-    //    // Assert
-    //    var exception = act.Should().Throw<DomainValidationException>()
-    //        .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
-    //        .Which;
-
-    //    exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.PASSWORD_SPECIAL_CHARACTER);
-    //}
 }

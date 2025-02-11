@@ -15,8 +15,6 @@ public class User : IUser
 
        .CustomInstantiator(f =>
        {
-           
-
            return new UserDomain(
                id,
                email,

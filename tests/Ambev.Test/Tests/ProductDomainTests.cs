@@ -53,7 +53,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -81,7 +81,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.INVALID_NUMBER);
@@ -109,7 +109,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -137,7 +137,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -165,7 +165,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NULL_FIELD);
@@ -193,7 +193,7 @@ public class ProductDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.NUMBER_GREATER_THAN_ZERO);

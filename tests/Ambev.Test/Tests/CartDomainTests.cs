@@ -13,8 +13,6 @@ public class CartDomainTests
 {
     private readonly Faker _faker = new();
 
-
-
     [Fact]
     public void ShouldCreateValidCart()
     {
@@ -269,7 +267,7 @@ public class CartDomainTests
 
         // Assert
         var exception = act.Should().Throw<DomainValidationException>()
-            .WithMessage(ResourceMessagesException.ERROR_DOMAIN) // Mensagem principal
+            .WithMessage(ResourceMessagesException.ERROR_DOMAIN)
             .Which;
 
         exception.Errors.Should().Contain(error => error.ErrorMessage == ResourceMessagesException.INVALID_IDENTIFIED);
