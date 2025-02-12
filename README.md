@@ -30,7 +30,6 @@ O padrão Repository é utilizado para abstrair o acesso aos dados, oferecendo u
 - .NET 8 (Core)
 - ASP.NET Core Web API
 - Entity Framework Core (para acesso ao banco de dados relacional)
-- MongoDB (para leitura de dados)
 - FluentValidation (para validação de dados)
 - MediatR (para mediar comandos, consultas e notificações)
 - PostgreSQL (para persistência de dados)
