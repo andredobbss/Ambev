@@ -1,7 +1,7 @@
 # Projeto de API - Arquitetura Limpa (Clean Architecture), CQRS, DDD, MediatR, Repository e Unit of Work
 Este projeto é uma API construída seguindo os princípios de Clean Architecture, Domain-Driven Design (DDD), CQRS (Command Query Responsibility Segregation), MediatR, e os padrões Repository e Unit of Work. O objetivo deste projeto é ilustrar uma implementação de uma API bem estruturada, modular e escalável, com foco em boas práticas de arquitetura de software.
 
-![GitHub repo views](https://komarev.com/ghpvc/?username=andredobbss&repo=FastReportAPI&color=blue)
+![GitHub repo views](https://komarev.com/ghpvc/?username=andredobbss&repo=Ambev&color=blue)
 
 ## Arquitetura do Projeto
 ### Clean Architecture
